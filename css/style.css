@@ -1,0 +1,135 @@
+/*==========01.Basic Settings==========*/
+html, body {
+  width: 100%;
+  height: 100%;
+  
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  /*font-size: 14px;*/
+  /*line-height: 1.42857143;*/
+  color: #333;
+  background-color: #fff;
+  font-family: "Microsoft JhengHei","微軟正黑體",sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*a, a:hover, a:focus {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}*/
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*==========02.Index==========*/
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*white-space: nowrap;*/
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.card {
+  margin: 10px 0;
+}
+
+.card-img-top {
+  height: 250px;
+}
+
+.card {
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
+.card:hover {
+  box-shadow: 3px 3px 4px 3px #aaa;
+  transition: box-shadow .2s linear;
+}
+
+/*==========03.Restaurant==========*/
+
+.info ul li {
+  list-style-type: none;
+}
+
+.alert-info {
+  margin-bottom: -1rem;
+  margin-top: 1rem;
+}
+
+/*==========04.Comment==========*/
+.comment_username {
+  color: #337ab7;
+  display: inline-block;
+}
+.comment_time {
+  font-size: 12px;
+  font-style: italic;
+}
+.fa-user-circle {
+  color: #888;
+  font-size: 20px;
+}
+.rating_user {
+  color: #ccc;
+  font-size: 20px;
+}
+.rated_user {
+  color: #FFFF00;
+  font-size: 15px;
+}
+.gray_star {
+  color: #ccc;
+  font-size: 15px;
+}
+.store_rating {
+  color: #ccc;
+  font-size: 25px;
+}
+
+/*==========05.Header==========*/
+.jumbotron-bg {
+  background-image: url(../images/food-on-table-326278.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/*==========06.Footer==========*/
+footer {
+  position: relative;
+  margin-top: 100px;
+}
+.footer-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+.footer-content p {
+  font-size: 14px;
+  line-height: 50px;
+  margin-bottom: -1rem;
+}
