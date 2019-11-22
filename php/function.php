@@ -72,20 +72,33 @@ function verify_user($email, $password) {
 
 function leave_comment($comment, $rating) {
   $result = null;
-  $create_date = date("Y-m-d");
+  $date = date("Y-m-d");
   $comment = htmlspecialchars($comment);
   $rating = $rating + 1;
   $user_id = $_SESSION["login_user_id"];
   $user_name = $_SESSION["login_username"];
   $data_id = $_SESSION["i"];
-  $sql = "INSERT INTO `comment` (`store_id`, `user_id`, `user_name`, `content`, `rating`,`time`) VALUES ('{$data_id}', '{$user_id}', '{$user_name}', '{$comment}', '{$rating}','{$create_date}') ";
+
+  $sql = "SELECT * FROM `comment` WHERE `store_id` = '{$data_id}' AND `user_id` = '{$user_id}'";
   $query = mysqli_query($_SESSION['conn'], $sql);
+
   if($query) {
-    if(mysqli_affected_rows($_SESSION['conn'])==1) {
+    if(mysqli_num_rows($query)==1) {
+      $sql1 = "UPDATE `comment` SET `content` = '{$comment}', `rating` = '{$rating}', `time` = '{$date}' WHERE `store_id` = '{$data_id}' AND `user_id` = '{$user_id}'";
+    } else {
+      $sql1 = "INSERT INTO `comment` (`store_id`, `user_id`, `user_name`, `content`, `rating`,`time`) VALUES ('{$data_id}', '{$user_id}', '{$user_name}', '{$comment}', '{$rating}','{$date}') ";
+    }
+  } else {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION["conn"]);
+  }
+
+  $query1 = mysqli_query($_SESSION["conn"], $sql1);
+  if($query1) {
+    if(mysqli_affected_rows($_SESSION["conn"])==1) {
       $result = true;
     }
   } else {
-    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['conn']);
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION["conn"]);
   }
   return $result;
 }
@@ -107,30 +120,12 @@ function show_comments($store_id) {
   return $datas;
 }
 
-function rate_restaurant($rating) {
-  $result = null;
-  $create_date = date("Y-m-d");
-  $rating = $rating + 1;
-  $user_id = $_SESSION["login_user_id"];
-  $user_name = $_SESSION["login_username"];
-  $data_id = $_SESSION["i"];
-  $sql = "INSERT INTO `rating` (`store_id`, `user_id`, `user_name`, `score`, `time`) VALUES ('{$data_id}', '{$user_id}', '{$user_name}', '{$rating}', '{$create_date}') ";
-  $query = mysqli_query($_SESSION['conn'], $sql);
-  if($query) {
-    if(mysqli_affected_rows($_SESSION['conn'])==1) {
-      $result = true;
-    }
-  } else {
-    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['conn']);
-  }
-  return $result;
-}
-
 function show_store_rating($store_id) {
-  $sql = "SELECT * FROM `rating` WHERE `store_id` = '{$store_id}'";
+  $sql = "SELECT * FROM `comment` WHERE `store_id` = '{$store_id}'";
   $result = mysqli_query($_SESSION["conn"], $sql);
   $num = mysqli_num_rows($result);
   $datas = array();
+  $avg = null;
   
   if($result) {
     if($num>0) {
@@ -139,9 +134,10 @@ function show_store_rating($store_id) {
       }
       $total = 0;
       for($i=0; $i<=$num-1; $i++) {
-        $total += $datas[$i]["score"];
+        $total += $datas[$i]["rating"];
       }
-      $avg = $total / $num;
+      $avg = round($total/$num,1);
+      $avg = sprintf("%.1f", $avg);
     }
     mysqli_free_result($result);
   } else {

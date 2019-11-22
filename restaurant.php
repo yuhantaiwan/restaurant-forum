@@ -3,6 +3,9 @@ require_once "php/db.php";
 require_once "php/function.php";
 $data = get_restaurant($_GET["i"]);
 $comments = show_comments($_GET["i"]);
+$avg = show_store_rating($_GET["i"]);
+$integer = floor($avg);
+$decimal = substr($avg, -1);
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,6 +39,36 @@ $comments = show_comments($_GET["i"]);
                 </li>
                 <li>電話： <?php echo $data["tel"]; ?></li>
                 <li>付款方式： <?php echo ($data["creditcard"]=="True")?"信用卡/現金":"現金"; ?></li>
+                <li class="mt-1">
+                  <?php if($avg):?>
+                    <span class="store_avg"><?php echo $avg?></span>
+                    <?php for($a=1; $a<=$integer; $a++) {
+                      echo '<i class="fas fa-star store_get_star"></i>';
+                    } 
+                      if($decimal>=4 && $decimal<=7) {
+                        echo '<i class="fas fa-star-half-alt store_get_star"></i>';
+                        for($a=0; $a<=3-$integer; $a++) {
+                          echo '<i class="fas fa-star store_no_star"></i>';
+                        }
+                      } elseif($decimal>=8) {
+                        echo '<i class="fas fa-star store_get_star"></i>';
+                        for($a=0; $a<=3-$integer; $a++) {
+                          echo '<i class="fas fa-star store_no_star"></i>';
+                        }
+                      } elseif($decimal<=3) {
+                        for($a=0; $a<=4-$integer; $a++) {
+                          echo '<i class="fas fa-star store_no_star"></i>';
+                        }
+                      }
+                    ?>
+
+                  <?php else: ?>
+                    <?php for($b=1; $b<=5; $b++) {
+                            echo '<i class="fas fa-star store_no_star"></i>';
+                          } ?>
+                  <?php endif;?>
+                  <span class="store_comments"><?php echo "共".count($comments)."則評論"; ?></span>
+                </li>
               </ul>
             </div>
           </div>
@@ -62,6 +95,16 @@ $comments = show_comments($_GET["i"]);
                   <li class="list-group-item">
                     <i class="fas fa-user-circle mr-2"></i>
                     <h6 class="comment_username mb-2"><?php echo $comment["user_name"];?></h6>
+                    <p class="comment_rating">
+                      <?php for($i=1; $i<=$comment["rating"]; $i++) {
+                        echo '<i class="fas fa-star rated_star"></i>';
+                      }
+                        if($comment["rating"]!=5) {
+                          for($j=1; $j<=5-$comment["rating"]; $j++) {
+                            echo '<i class="fas fa-star gray_star"></i>';
+                          }
+                      } ?>
+                    </p>
                     <p class="comment_content mb-2"><?php echo $comment["content"];?></p>
                     <p class="comment_time"><?php echo $comment["time"];?></p>
                   </li>

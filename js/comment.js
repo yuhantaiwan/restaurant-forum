@@ -62,6 +62,6 @@ function resetStarColor() {
 function setStarColor(max) {
   for(let i=0; i<=max; i++) {
     $(".rating_user:eq("+i+")").css("cursor", "pointer");
-    $(".rating_user:eq("+i+")").css("color", "yellow");
+    $(".rating_user:eq("+i+")").css("color", "#FFBB00");
   }
 }

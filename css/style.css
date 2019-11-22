@@ -97,17 +97,30 @@ img {
   color: #ccc;
   font-size: 20px;
 }
-.rated_user {
-  color: #FFFF00;
+.rated_star {
+  color: #FFBB00;
   font-size: 15px;
 }
 .gray_star {
   color: #ccc;
   font-size: 15px;
 }
-.store_rating {
+.store_get_star {
+  color: #FFBB00;
+  font-size: 25px;
+}
+.store_no_star {
   color: #ccc;
   font-size: 25px;
+}
+.store_avg {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFBB00;
+}
+.store_comments {
+  font-size: 15px;
+  font-weight: 300px;
 }
 
 /*==========05.Header==========*/

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2019-11-19 07:44:22
+-- 產生時間： 2019-11-22 03:51:48
 -- 伺服器版本: 10.1.30-MariaDB
 -- PHP 版本： 5.6.33
 
@@ -34,6 +34,7 @@ CREATE TABLE `comment` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rating` int(11) NOT NULL,
   `time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -41,26 +42,24 @@ CREATE TABLE `comment` (
 -- 資料表的匯出資料 `comment`
 --
 
-INSERT INTO `comment` (`id`, `store_id`, `user_id`, `user_name`, `content`, `time`) VALUES
-(1, '01_100', 2, '王小明', '擔心如下幫忙取得銷售一流特性那樣享受介紹閲讀者你要無奈，似乎地理影響電話當時大會舉報國人，造型小心。', '2019-11-07'),
-(2, '01_109', 2, '王小明', '江蘇人家三星也是我看全，剛剛電話殺人我對註冊加盟有意物業內，看不到補充風雲種種章節發送供應共享年輕人全國室內所，投資者事件今後事項最近走，專區一級發佈還有或許相關圖片導航收入常見批准不會股權進，鐵通一對練習章節各位努力批評文件大小毫不影，地上程序微微男孩在這無法如有藝術成立發展於是包含比例江蘇眼，完善流行如何承擔去了一起官員權力職務大大數據已有有關哪個。', '2019-11-07'),
-(3, '01_136', 2, '王小明', '中華人民公司微軟五金如何雖然電腦，職位審批溝通報紙上市報導打開對待主題監控精選地說，今後孤獨表達第一江西最多出來越來。', '2019-11-07'),
-(4, '01_147', 2, '王小明', '害怕我真表現一口委託所以說，任務黑色居住一時再次調節本人成功有利於奇怪下午職，相當依然運行平台關心提示信息承擔防治，更大女友傳真引用不喜歡出版社住，只是鈴聲自。', '2019-11-07'),
-(5, '01_101', 3, '林大美', '一對大幅自從詳細中華人民某個年輕人眼，都有都沒死了明白財富多少讓你意義困難留言它的，三人回覆有一些贏得商業專門分析好多電子商務抓住相應人民，門派對於目前天津天氣告訴你附件特性優化歡迎光臨精英證實甚，版面動作插件夫妻角色隨時方案電子郵件事情方式含有理，等人人家樓上衣服推出昨日一起漂亮你自己，硬盤教育女生全體這樣確保僅僅自己的亞洲，電視大概告訴你點頭體育靈活表情程序關於只有內容簡介是，不久背景風雲空氣北方在此轉帖。', '2019-11-07'),
-(6, '01_100', 3, '林大美', '保存回來教師蔬菜指揮拍攝，廣東相關圖片主要股份有限公司反應休息主流，那些趨勢報價回到就算完，全市驅動離開作為進一步一步角度一定一大可能會興奮預期，到了經歷未來你們的不再，輕易而來。', '2019-11-07'),
-(7, '01_110', 3, '林大美', '反覆特殊果然紛紛視頻更是招商，重視原帖創建可以用可以區域圖，贏得導致美容轉身同意下去躺在人士高，引擎部隊收藏本頁那天你的和諧在這講話我有防治天，武器結果例如尤其白色兩個呼吸給我們尺寸哪個家，在此自由原理維修電腦告訴你鈴聲下載行政硬盤，案件華人主體消除處理高達故障投訴各類思，生日簡單很大變得創建人們如果徹底爸爸播，她們聯繫教程是不是隨着到底完美的是情況頭髮，每次地圖演員全身相機寶貝公司想想物理，出。', '2019-11-07'),
-(8, '01_104', 3, '林大美', '發佈時間後來最為各項專題維，部隊大廈作戰人民幣另一個光盤玄幻您的唱片手冊瀏覽，不代表魔法大盤居然或是回覆皇帝多個僅供往往，距離備案模樣時候挑戰轉帖，各國越來越沒人國務院股票申請股權下，革命一支室內對象味道不懂錯誤陽光組，整個我市你怎麼些什麼同時熱點一面第一個被人些，小遊戲相冊轎車行業望着沉默勞動之家來說那些他說討論，必須所在地生存付款一遍金融同志一家出版社老婆來源內地自己翻譯，隊員但在接近似乎快捷這款多個值得自然一對三人提示留在指揮批發，更為上帝抱著大人展開馬上規則人生工人在他，試試突出利潤根據最佳，加工學校一切還沒球員不得轉身網，出現在前往顏色不在隨後標誌熱情室內效果深，市場價生成女士人體。', '2019-11-07'),
-(9, '01_219', 3, '林大美', '站在才會建築審批位置任何幾次杭州多個各國本人留學曾，這麼多運行夫人鏡頭困難熱點試試考生特點，之一屬於進去精品家園法律力度指揮查詢消失，相對終於案件特徵對待讓她。', '2019-11-07'),
-(10, '01_137', 4, 'Eren Jaeger', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quo accusamus, tempore, amet, suscipit quidem, deserunt fugiat qui facilis voluptas ipsa facere tenetur incidunt. Delectus minima asperiores reiciendis quae quidem.', '2019-11-07'),
-(11, '01_100', 4, 'Eren Jaeger', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum distinctio dicta sit minima reiciendis esse dolorem velit ut molestias debitis est voluptatum dolores, eum unde, earum assumenda laboriosam nesciunt ipsam!', '2019-11-07'),
-(12, '01_212', 4, 'Eren Jaeger', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat omnis, mollitia blanditiis adipisci enim iste quibusdam iure officia voluptatibus asperiores perspiciatis explicabo nulla rerum nihil. Ad aspernatur harum similique deserunt, aut excepturi consequatur error laboriosam quibusdam unde dicta sequi vitae tenetur reiciendis distinctio architecto, odit soluta! Inventore illum, non consectetur aliquid suscipit debitis id cum qui fugiat tempora dignissimos doloribus odio? Sint ipsum natus expedita laudantium quod et obcaecati suscipit!', '2019-11-07'),
-(13, '01_101', 5, 'Mikasa Ackerman', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia autem non consectetur perferendis eum voluptatibus modi mollitia voluptas officiis quia, totam vero dolor consequatur. Incidunt cumque ea corporis voluptate, odio.', '2019-11-07'),
-(14, '01_116', 5, 'Mikasa Ackerman', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, in. Tempora nulla repellat dolore, magni ipsam maiores atque! A et suscipit possimus expedita nisi sed voluptatem libero earum. Delectus, corporis.', '2019-11-07'),
-(15, '01_184', 6, 'Armin Arlert', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quisquam, eum mollitia consequuntur non quia aliquid ex sequi. Ducimus deserunt dicta ullam nobis vitae culpa rem cum dolorum, similique labore!', '2019-11-07'),
-(16, '01_101', 6, 'Armin Arlert', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero harum eveniet illum beatae soluta, ratione ea ipsa minus assumenda voluptatem quae dolore fugit iste hic ducimus ad! Amet deleniti, sint?', '2019-11-07'),
-(17, '01_103', 7, 'Armin Arlert', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptate tempore sit amet, autem doloribus molestiae ad ut. Recusandae, adipisci. Alias fugiat, hic! Recusandae doloribus consectetur excepturi quidem sint vitae?', '2019-11-07'),
-(18, '01_103', 7, '里維·阿卡曼', '留學經常而已同時表現發佈時間國務院如果您精品寶寶精靈有，謝謝更為新浪關閉重視傳統發達，使用說什麼加大指標玩家化學即將國內外看，上去醫療種類一口氣最，原理明年寬頻包括不得數學新鮮出口而且教材，交易一次不僅觀察打算電器成績對你緊緊快捷電視台感謝不同中有精，正式咖啡本帖網路是指權益理念演唱依然大大，湖北接收說話笑容微微廣泛包裝雲南猶豫方式承諾此次以後對她，一台正確可以破解版對他老人貸款病，執行時間臉色。', '2019-11-07'),
-(19, '01_143', 7, '里維·阿卡曼', '站內會有狀態怎樣居民一級用於成績導演審核欣賞昨天您可，做出總數獨特年輕人不，職工買賣生態五金幹什麼很容易出現好像寶貝一，搜索健康不需要地區辛苦屏幕合適校長接受呼吸隊伍所在，有限輔助出版社區不同後面再。', '2019-11-07');
+INSERT INTO `comment` (`id`, `store_id`, `user_id`, `user_name`, `content`, `rating`, `time`) VALUES
+(1, '01_100', 2, '王小明', '再訪，好吃！', 5, '2019-11-21'),
+(2, '01_101', 3, '林大美', '一對大幅自從詳細中華人民某個年輕人眼，都有都沒死了明白財富多少讓你意義困難留言它的，三人回覆有一些贏得商業專門分析好多電子商務抓住相應人民，門派對於目前天津天氣告訴你附件特性優化歡迎光臨精英證實甚，版面動作插件夫妻角色隨時方案電子郵件事情方式含有理，等人人家樓上衣服推出昨日一起漂亮你自己，硬盤教育女生全體這樣確保僅僅自己的亞洲，電視大概告訴你點頭體育靈活表情程序關於只有內容簡介是，不久背景風雲空氣北方在此轉帖。', 3, '2019-11-07'),
+(3, '01_100', 3, '林大美', '保存回來教師蔬菜指揮拍攝，廣東相關圖片主要股份有限公司反應休息主流，那些趨勢報價回到就算完，全市驅動離開作為進一步一步角度一定一大可能會興奮預期，到了經歷未來你們的不再，輕易而來。', 4, '2019-11-07'),
+(4, '01_110', 3, '林大美', '反覆特殊果然紛紛視頻更是招商，重視原帖創建可以用可以區域圖，贏得導致美容轉身同意下去躺在人士高，引擎部隊收藏本頁那天你的和諧在這講話我有防治天，武器結果例如尤其白色兩個呼吸給我們尺寸哪個家，在此自由原理維修電腦告訴你鈴聲下載行政硬盤，案件華人主體消除處理高達故障投訴各類思，生日簡單很大變得創建人們如果徹底爸爸播，她們聯繫教程是不是隨着到底完美的是情況頭髮，每次地圖演員全身相機寶貝公司想想物理，出。', 3, '2019-11-07'),
+(5, '01_104', 3, '林大美', '發佈時間後來最為各項專題維，部隊大廈作戰人民幣另一個光盤玄幻您的唱片手冊瀏覽，不代表魔法大盤居然或是回覆皇帝多個僅供往往，距離備案模樣時候挑戰轉帖，各國越來越沒人國務院股票申請股權下，革命一支室內對象味道不懂錯誤陽光組，整個我市你怎麼些什麼同時熱點一面第一個被人些，小遊戲相冊轎車行業望着沉默勞動之家來說那些他說討論，必須所在地生存付款一遍金融同志一家出版社老婆來源內地自己翻譯，隊員但在接近似乎快捷這款多個值得自然一對三人提示留在指揮批發，更為上帝抱著大人展開馬上規則人生工人在他，試試突出利潤根據最佳，加工學校一切還沒球員不得轉身網，出現在前往顏色不在隨後標誌熱情室內效果深，市場價生成女士人體。', 4, '2019-11-07'),
+(6, '01_219', 3, '林大美', '站在才會建築審批位置任何幾次杭州多個各國本人留學曾，這麼多運行夫人鏡頭困難熱點試試考生特點，之一屬於進去精品家園法律力度指揮查詢消失，相對終於案件特徵對待讓她。', 4, '2019-11-07'),
+(7, '01_137', 4, 'Eren Jaeger', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quo accusamus, tempore, amet, suscipit quidem, deserunt fugiat qui facilis voluptas ipsa facere tenetur incidunt. Delectus minima asperiores reiciendis quae quidem.', 4, '2019-11-07'),
+(8, '01_100', 4, 'Eren Jaeger', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum distinctio dicta sit minima reiciendis esse dolorem velit ut molestias debitis est voluptatum dolores, eum unde, earum assumenda laboriosam nesciunt ipsam!', 3, '2019-11-07'),
+(9, '01_212', 4, 'Eren Jaeger', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat omnis, mollitia blanditiis adipisci enim iste quibusdam iure officia voluptatibus asperiores perspiciatis explicabo nulla rerum nihil. Ad aspernatur harum similique deserunt, aut excepturi consequatur error laboriosam quibusdam unde dicta sequi vitae tenetur reiciendis distinctio architecto, odit soluta! Inventore illum, non consectetur aliquid suscipit debitis id cum qui fugiat tempora dignissimos doloribus odio? Sint ipsum natus expedita laudantium quod et obcaecati suscipit!', 2, '2019-11-07'),
+(10, '01_101', 5, 'Mikasa Ackerman', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia autem non consectetur perferendis eum voluptatibus modi mollitia voluptas officiis quia, totam vero dolor consequatur. Incidunt cumque ea corporis voluptate, odio.', 2, '2019-11-07'),
+(11, '01_116', 5, 'Mikasa Ackerman', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, in. Tempora nulla repellat dolore, magni ipsam maiores atque! A et suscipit possimus expedita nisi sed voluptatem libero earum. Delectus, corporis.', 3, '2019-11-07'),
+(12, '01_103', 7, 'Armin Arlert', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptate tempore sit amet, autem doloribus molestiae ad ut. Recusandae, adipisci. Alias fugiat, hic! Recusandae doloribus consectetur excepturi quidem sint vitae?', 4, '2019-11-07'),
+(13, '01_103', 7, '里維·阿卡曼', '留學經常而已同時表現發佈時間國務院如果您精品寶寶精靈有，謝謝更為新浪關閉重視傳統發達，使用說什麼加大指標玩家化學即將國內外看，上去醫療種類一口氣最，原理明年寬頻包括不得數學新鮮出口而且教材，交易一次不僅觀察打算電器成績對你緊緊快捷電視台感謝不同中有精，正式咖啡本帖網路是指權益理念演唱依然大大，湖北接收說話笑容微微廣泛包裝雲南猶豫方式承諾此次以後對她，一台正確可以破解版對他老人貸款病，執行時間臉色。', 3, '2019-11-07'),
+(14, '01_143', 7, '里維·阿卡曼', '站內會有狀態怎樣居民一級用於成績導演審核欣賞昨天您可，做出總數獨特年輕人不，職工買賣生態五金幹什麼很容易出現好像寶貝一，搜索健康不需要地區辛苦屏幕合適校長接受呼吸隊伍所在，有限輔助出版社區不同後面再。', 2, '2019-11-07'),
+(15, '01_100', 6, 'Armin Arlert', '起點我一效益不詳企業法規網上學習拒絶小遊戲種子代表空間，說出消費者評分安徽求購測試生活敵人中心各級天地財務，將其到底年輕支付當年動漫配合天天為，補充培訓指數課程睡覺給我此，階段對不起目標發佈日期等待經過每天立刻幾個大多參觀白色，疾病計算機同學用戶名是從甚至集，運輸團結避免聯合告知此次競，看看留言記住破解編程讓你至於走向。', 3, '2019-11-21'),
+(23, '01_101', 6, 'Armin Arlert', '', 4, '2019-11-21'),
+(24, '01_109', 4, 'Eren Jaeger', '可是大人喜愛彷彿植物平時對於尤其是考生不能下載，規範我要管理員行業一部組圖提交，職工國務院當然相同顯示能在另一驚人責任，說明還沒有前後這是笑話商家命令不會字幕根據財產平時經，股份成長黨員校園更大機會麻煩最好的之處女孩子市場，是個不但誘惑圖形也要帳號要是保持答案註冊時間還，人民共和國只不過關注高速那是真正通用我對差距日記引用諮。', 4, '2019-11-22');
 
 -- --------------------------------------------------------
 
@@ -285,7 +284,7 @@ ALTER TABLE `user`
 -- 使用資料表 AUTO_INCREMENT `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- 使用資料表 AUTO_INCREMENT `restaurant`
