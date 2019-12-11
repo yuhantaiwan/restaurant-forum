@@ -1,7 +1,7 @@
 $(function() {
   $.ajax({
     type: "GET",
-    url: "http://localhost/forum/php/get_json.php",
+    url: "https://restaurant-forum-yh.herokuapp.com//forum/php/get_json.php",
     success: showRegion,
     error: function() {
       alert("Connect to region api error");
