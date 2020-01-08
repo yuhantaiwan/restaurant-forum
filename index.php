@@ -17,15 +17,20 @@ $datas = get_all_restaurants();
     <title>餐廳評論網</title>
   </head>
   <body>
+    <div id="loading"></div>
+    <script>
+      loadPage();
+      function loadPage() {
+        let loader = document.getElementById("loading");
+      loader.classList.add("loading");
+      }
+    </script>
     <?php include_once "header.php"; ?>  
       
       <div class="container">
         <!-- region_menu -->
         <div class="row mt-3 justify-content-center">
           <ul class="nav nav-pills" id="region_menu">
-            <li class="nav-item">
-              <a class="nav-link region_nav active" href="index.php">總覽</a>
-            </li>
           </ul>
         </div>
         <!-- cards -->

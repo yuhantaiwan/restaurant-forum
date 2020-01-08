@@ -3,14 +3,8 @@ $current_file = $_SERVER["PHP_SELF"];     // 透過$_SERVER['PHP_SELF']先取得
 $current_file = basename($current_file, ".php");      // 由basename取得檔案名稱，並去掉".php" 副檔名稱
 
 switch($current_file) {
-  case "latest_news":
-    $index = 1;
-    break;
   case "popular":
-    $index = 2;
-    break;
-  case "gourmet":
-    $index = 3;
+    $index = 1;
     break;
   default:
     $index = 0;
@@ -150,16 +144,10 @@ switch($current_file) {
     <div class="row">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link <?php echo ($index==0)?'active text-primary':'text-dark';?>" href="index.php">餐廳</a>
+          <a class="nav-link <?php echo ($index==0)?'active text-primary':'text-dark';?>" href="index.php">餐廳總覽</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php echo ($index==1)?'active text-primary':'text-dark';?>" href="latest_news.php">最新動態</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($index==2)?'active text-primary':'text-dark';?>" href="popular.php">Top 10 人氣餐廳</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($index==3)?'active text-primary':'text-dark';?>" href="gourmet.php">美食達人</a>
+          <a class="nav-link <?php echo ($index==1)?'active text-primary':'text-dark';?>" href="popular.php">Top 10 人氣餐廳</a>
         </li>
       </ul>
     </div>

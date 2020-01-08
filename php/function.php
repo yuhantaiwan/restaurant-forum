@@ -62,6 +62,7 @@ function verify_user($email, $password) {
       $_SESSION["is_login"] = true;
       $_SESSION["login_user_id"] = $user["id"];
       $_SESSION["login_username"] = $user["username"];
+      $_SESSION["login_role"] = $user["role"];
       $result = true;
     }
   } else {
@@ -100,11 +101,53 @@ function leave_comment($comment, $rating) {
   } else {
     echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION["conn"]);
   }
+
+  $sql2 = "SELECT * FROM `comment` WHERE `store_id` = '{$data_id}'";
+  $query2 = mysqli_query($_SESSION["conn"], $sql2);
+  $num = mysqli_num_rows($query2);
+  $datas = array();
+  $avg = null;
+  
+  if($query2) {
+    if($num>0) {
+      while($row = mysqli_fetch_assoc($query2)) {
+        $datas[] = $row;
+      }
+      $total = 0;
+      for($i=0; $i<=$num-1; $i++) {
+        $total += $datas[$i]["rating"];
+      }
+      $avg = round($total/$num,1);
+      $avg = sprintf("%.1f", $avg);
+    }
+  }
+
+  $sql3 = "UPDATE `restaurant` SET `avg_rating` = '{$avg}' WHERE `data_id` = '{$data_id}'";
+
+  mysqli_query($_SESSION['conn'], $sql3);
+
   return $result;
 }
 
 function show_comments($store_id) {
   $sql = "SELECT * FROM `comment` WHERE `store_id` = '{$store_id}'";
+  $datas = array();
+  $result = mysqli_query($_SESSION["conn"], $sql);
+  if($result) {
+    if(mysqli_num_rows($result)>0) {
+      while($row = mysqli_fetch_assoc($result)) {
+        $datas[] = $row;
+      }
+    }
+    mysqli_free_result($result);
+  } else {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION["conn"]);
+  }
+  return $datas;
+}
+
+function show_ranks() {
+  $sql = "SELECT * FROM `restaurant` ORDER BY `avg_rating` DESC";
   $datas = array();
   $result = mysqli_query($_SESSION["conn"], $sql);
   if($result) {

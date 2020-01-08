@@ -1,6 +1,12 @@
+// $(document).ready(function() {
+//   // $('body').hide().fadeIn(500).delay(8000);
+//   $(".loading").fadeIn(500);
+// });
+
 $(function() {
   $.ajax({
     type: "GET",
+    // url: "http://localhost/forum/php/get_json.php",
     url: "https://restaurant-forum-yh.herokuapp.com/php/get_json.php",
     success: showRegion,
     error: function() {
@@ -42,6 +48,9 @@ function showRegion(data) {
     +regionTitle[i]+'</a></li>';
     $("#region_menu").append(regionHTML);
   }
+
+$(".loading").fadeOut(800);
+
   $(".region_nav").on("click", function() {
     getItem($(this).attr("data-name"), $(this).attr("data-text"), $(this).attr("data-img"), $(this).attr("data-id"));
   });
